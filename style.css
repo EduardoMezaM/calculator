@@ -1,3 +1,78 @@
 body{
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.calculator{
+    margin-top: 50px;
+    border-radius: 8px;
+    padding: 3px;
+    background-color: rgb(65, 65, 65);   
+}
+
+.display-screen{
+    display: flex;
+    justify-content: flex-end;
+    width: 303px;
+    height: 75px;
+    
+}
+
+.output{
+    font-size: 25px;
+    color: white;
+    margin: 33px 13px 0px 0px;
+}
+
+.buttons-div{
+    display: flex;
+    gap: 2px;
+    width: 306px;
+    height: 390px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.clearBtn,
+.buttons-div .zeroBtn{
+    width: 152px;
+    height: 75px;
+}
+
+.operatorBtn,
+.digitBtn,
+.posNegBtn,
+.equalsBtn{
+    width: 75px;
+    height: 75px;
+}
+
+.top-row{
+    background-color: gray;
+}
+
+.left-column{
+    background-color: orange;
+}
+
+button{
+    border-radius: 3px;
+    border: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+   
+}
+
+button:hover {
+  background-color: rgb(104, 103, 103);
+  color: white;
+}
+
+button:active {
+  transform: scale(0.95);
 }
