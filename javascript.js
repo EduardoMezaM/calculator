@@ -23,6 +23,8 @@ function storeNum(){
 };
 
 function storeOperator(){
+    if(currNum === '') return;
+
     prevNum = currNum;
     operator = this.innerText;
     currNum = '';
@@ -36,6 +38,7 @@ function clear(){
     result = '';
     displayOutput.innerText = '0';
 };
+
 function toggleSign(){
     if(!currNum) return; 
 
@@ -49,6 +52,32 @@ function toggleSign(){
     displayOutput.innerText = currNum;
 };
 
+function calculate(){
+   if(prevNum !== '' && currNum !== '' && operator !== ''){
+        const a = Number(prevNum);
+        const b = Number(currNum); 
+
+        if(operator === '/'){
+            result = a / b;
+        }
+        else if(operator === 'x'){
+            result = a * b;
+        }
+        else if(operator === '-'){
+            result = a - b;
+        }
+        else if(operator === '+'){
+            result = a + b;
+        }
+
+        displayOutput.innerText = result;
+        currNum = result;
+        operator = '';
+        prevNum = '';
+   }
+   else return;
+};
+
 digitBtns.forEach(digitBtn => {
     digitBtn.addEventListener('click', storeNum);
 });
@@ -59,4 +88,6 @@ operatorBtns.forEach(operatorBtn => {
 
 clearBtn.addEventListener('click', clear);
 
-posNegBtn.addEventListener('click',toggleSign)
+posNegBtn.addEventListener('click', toggleSign)
+
+equalsBtn.addEventListener('click', calculate);
