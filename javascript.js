@@ -58,16 +58,16 @@ function calculate(){
         const b = Number(currNum); 
 
         if(operator === '/'){
-            result = a / b;
+            result = (a / b).toFixed(3);
         }
         else if(operator === 'x'){
-            result = a * b;
+            result = (a * b).toFixed(3);
         }
         else if(operator === '-'){
-            result = a - b;
+            result = (a - b).toFixed(3);
         }
         else if(operator === '+'){
-            result = a + b;
+            result = (a + b).toFixed(3);
         }
 
         displayOutput.innerText = result;
