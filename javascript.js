@@ -36,6 +36,18 @@ function clear(){
     result = '';
     displayOutput.innerText = '0';
 };
+function toggleSign(){
+    if(!currNum) return; 
+
+    if(currNum.startsWith('-')){
+        currNum = currNum.slice(1); 
+    }
+    else{
+        currNum = '-' + currNum;
+    }
+
+    displayOutput.innerText = currNum;
+};
 
 digitBtns.forEach(digitBtn => {
     digitBtn.addEventListener('click', storeNum);
@@ -46,3 +58,5 @@ operatorBtns.forEach(operatorBtn => {
 });
 
 clearBtn.addEventListener('click', clear);
+
+posNegBtn.addEventListener('click',toggleSign)
