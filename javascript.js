@@ -58,18 +58,18 @@ function calculate(){
         const b = Number(currNum); 
 
         if(operator === '/'){
-            result = (a / b).toFixed(3);
+            result = a / b;
         }
         else if(operator === 'x'){
-            result = (a * b).toFixed(3);
+            result = a * b;
         }
         else if(operator === '-'){
-            result = (a - b).toFixed(3);
+            result = a - b;
         }
         else if(operator === '+'){
-            result = (a + b).toFixed(3);
+            result = a + b;
         }
-
+        result = Math.round(result * 10) / 10;
         displayOutput.innerText = result;
         currNum = result;
         operator = '';
