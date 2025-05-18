@@ -13,17 +13,20 @@ let result = '';
 function storeNum(){
     const digit = this.innerText;
     if(digit === '.' && currNum.includes('.')) return;
-    else{
-        currNum += digit;
-        displayOutput.innerText = currNum;
-    }
+    else if(digit === '.' && currNum === ''){
+        currNum = '0'
+    };
+    
+    currNum += digit;
+    displayOutput.innerText = currNum;
+
 };
 
 function storeOperator(){
     prevNum = currNum;
     operator = this.innerText;
     currNum = '';
-    displayOutput.innerText = '';
+    displayOutput.innerText = this.innerText;
 };
 
 function clear(){
@@ -31,7 +34,7 @@ function clear(){
     prevNum = '';
     operator = '';
     result = '';
-    displayOutput.innerText = '';
+    displayOutput.innerText = '0';
 };
 
 digitBtns.forEach(digitBtn => {
