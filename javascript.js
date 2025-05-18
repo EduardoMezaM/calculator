@@ -26,6 +26,14 @@ function storeOperator(){
     displayOutput.innerText = '';
 };
 
+function clear(){
+    currNum = '';
+    prevNum = '';
+    operator = '';
+    result = '';
+    displayOutput.innerText = '';
+};
+
 digitBtns.forEach(digitBtn => {
     digitBtn.addEventListener('click', storeNum);
 });
@@ -34,3 +42,4 @@ operatorBtns.forEach(operatorBtn => {
     operatorBtn.addEventListener('click', storeOperator)
 });
 
+clearBtn.addEventListener('click', clear);
