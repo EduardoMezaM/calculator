@@ -24,6 +24,9 @@ function storeNum(){
 
 function storeOperator(){
     if(currNum === '') return;
+    else if(prevNum && currNum && operator){
+        calculate();
+    }
 
     prevNum = currNum;
     operator = this.innerText;
